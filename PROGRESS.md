@@ -138,6 +138,42 @@ Har sprint tugagach shu faylga bajarilgan ish yoziladi (CLAUDE.md 9-bo'lim, 6-ba
 
 ---
 
-## Sprint 4 — Qarz va kredit moduli
+## Sprint 4 — Qarz va kredit moduli ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+> Eslatma: `SMARTA_QARZ_KREDIT_MODULI_v1.0.json` spetsifikatsiyasi berilmagan, shuning uchun sprint promptidagi formulalarga amal qilindi.
+
+### Bajarilgan ishlar
+
+1. **Sof moliyaviy formulalar** (`domain/qarz.ts`, 15 test):
+   - `oylikFoizSumma` = qoldiq × (yillik/100) / 12 — **bosh ko'rsatkich**.
+   - `qarzQoldigi`, `tolovTaqsimot` (foiz/asosiy), `tolovKamaytiradimi` (ogohlantirish sharti).
+   - `annuitetTolov` (0% va muddatsiz holatlar bilan).
+   - `ertaYopish`: n = −ln(1 − Q·i/P) / ln(1+i); 0% → Q/P; to'lov foizdan kam → null.
+   - `ertaYopishVariantlari`: 4 variant + tejaladigan foiz.
+2. **To'lov xizmati** (`repositories/qarzTolov.ts`, 3 test): to'lov ham qarz jurnaliga, ham **asosiy tranzaksiya jurnaliga** avtomatik tushadi (men_qarzdor→chiqim, menga_qarzdor→kirim). Qoldiq 0 ga yetsa qarz yopiladi.
+3. **UI:**
+   - `useDebts` hook — qoldiq + oylik foiz.
+   - Qarz tab: **"Bu oy foizga ketadi"** kartasi (qizil, eng ko'zga tashlanadigan), yo'nalish filtri (men qarzdorman / menga qarzdor), jami, ro'yxat, qo'shish.
+   - Qarz qo'shish formasi (`QarzForma`).
+   - Qarz detali (`app/qarz/[id].tsx`): qoldiq, oylik foiz (qizil), to'lov yozish + **kamaymaydigan to'lov ogohlantirishi**, erta yopish variantlari, to'lovlar tarixi.
+
+### Qat'iy qoida (CLAUDE.md 2-bo'lim, 2-qoida)
+
+Modulda hech qanday kredit taklifi, bank havolasi yoki refinansirovka tavsiyasi **YO'Q** — faqat foydalanuvchining o'z qarzini hisob-kitob qilish.
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Erta yopish qo'lda hisoblangan namuna bilan ±2% ichida (test: 26 oy, foiz ~2,9 mln)
+- ✅ Oylik to'lov foizdan kam holati 100% aniqlanadi (`tolovKamaytiradimi` testi)
+- ✅ Barcha moliyaviy formula `/src/domain` ichida, sof funksiya, test bilan
+- ✅ Chegaraviy holatlar: 0% foiz, muddatsiz qarz, to'liq yopilgan qarz — test qilingan
+- ✅ `tsc`, `lint`, `prettier` toza; 56 test; Metro bundle yig'iladi
+
+---
+
+## Sprint 5 — Maqsadli fondlar
 
 Holat: boshlanmagan.

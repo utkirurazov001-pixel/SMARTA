@@ -111,5 +111,31 @@
     "yashir": "Яшириш",
     "korsat": "Кўрсатиш",
     "taqqoslash": "ўтган даврга нисбатан"
+  },
+  "qarz": {
+    "menQarzdor": "Мен қарздорман",
+    "mengaQarzdor": "Менга қарздор",
+    "buOyFoizga": "Бу ой фоизга кетади",
+    "jami": "Жами",
+    "yangi": "Янги қарз",
+    "kreditor": "Кредитор / мижоз",
+    "stavka": "Йиллик фоиз ставкаси (%)",
+    "muddat": "Муддат (ой)",
+    "tolovTuri": "Тўлов тури",
+    "qoldiq": "Қолдиқ",
+    "oylikFoiz": "Ойлик фоиз",
+    "tolovYoz": "Тўлов ёзиш",
+    "tolovSummasi": "Тўлов суммаси",
+    "ertaYopish": "Эрта ёпиш калкулятори",
+    "oy": "ой",
+    "jamiFoiz": "Жами фоиз",
+    "tejaladi": "Тежалади",
+    "ogohlantirish": "Бу тўлов билан қарз камаймайди",
+    "tolovlar": "Тўловлар",
+    "yopilgan": "Ёпилган",
+    "bosh": "Қарз йўқ",
+    "annuitet": "Аннуитет",
+    "differensial": "Дифференциал",
+    "muddatsiz": "Муддатсиз"
   }
 }

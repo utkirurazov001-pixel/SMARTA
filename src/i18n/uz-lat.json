@@ -111,5 +111,31 @@
     "yashir": "Yashirish",
     "korsat": "Ko'rsatish",
     "taqqoslash": "o'tgan davrga nisbatan"
+  },
+  "qarz": {
+    "menQarzdor": "Men qarzdorman",
+    "mengaQarzdor": "Menga qarzdor",
+    "buOyFoizga": "Bu oy foizga ketadi",
+    "jami": "Jami",
+    "yangi": "Yangi qarz",
+    "kreditor": "Kreditor / mijoz",
+    "stavka": "Yillik foiz stavkasi (%)",
+    "muddat": "Muddat (oy)",
+    "tolovTuri": "To'lov turi",
+    "qoldiq": "Qoldiq",
+    "oylikFoiz": "Oylik foiz",
+    "tolovYoz": "To'lov yozish",
+    "tolovSummasi": "To'lov summasi",
+    "ertaYopish": "Erta yopish kalkulyatori",
+    "oy": "oy",
+    "jamiFoiz": "Jami foiz",
+    "tejaladi": "Tejaladi",
+    "ogohlantirish": "Bu to'lov bilan qarz kamaymaydi",
+    "tolovlar": "To'lovlar",
+    "yopilgan": "Yopilgan",
+    "bosh": "Qarz yo'q",
+    "annuitet": "Annuitet",
+    "differensial": "Differensial",
+    "muddatsiz": "Muddatsiz"
   }
 }
