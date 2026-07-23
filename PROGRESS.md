@@ -40,6 +40,40 @@ Har sprint tugagach shu faylga bajarilgan ish yoziladi (CLAUDE.md 9-bo'lim, 6-ba
 
 ---
 
-## Sprint 1 — Ma'lumotlar qatlami
+## Sprint 1 — Ma'lumotlar qatlami ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **Domen turlari** (`src/domain/types.ts`): `Contour`, `TransactionType`, `AccountKind`, `DebtDirection`, `DebtPaymentType`, `FundMovementDirection`. `tokens.ts` endi `Contour`ni shu yerdan oladi (yagona manba).
+2. **DB interfeysi** (`src/db/db.ts`): `SmartaDb` — minimal async interfeys. Repozitoriylar faqat shunga tayanadi, `expo-sqlite`ga bevosita emas → testlarda `node:sqlite` bilan aynan bir xil kod sinaladi.
+3. **Schema** (`src/db/schema.ts`): 7 jadval — `accounts`, `categories`, `transactions`, `debts`, `debt_payments`, `funds`, `fund_movements`. Har birida majburiy ustunlar (`id`, `contour`, `created_at`, `updated_at`, `deleted_at`) + CHECK cheklovlar + indekslar. Pul — `INTEGER`.
+4. **Migratsiya** (`src/db/migrations/`): `PRAGMA user_version` asosida versiyalangan, idempotent tizim.
+5. **Client** (`src/db/client.ts`): `expo-sqlite` adapteri + `openSmartaDb()` (migratsiya + seed bir marta).
+6. **Repozitoriylar** (`src/repositories/`): 7 entity uchun CRUD. **Har bir funksiya majburiy `contour` qabul qiladi** va `WHERE contour = ?` + `deleted_at IS NULL` qo'shadi (`base.ts` umumiy asos).
+7. **Seed** (`src/db/seed.ts`): shaxsiy (9) va biznes (9) standart kategoriyalar + standart naqd hisob. i18n kalitlari orqali — uchala tilda mavjud. Idempotent.
+8. **Testlar** (13 ta, hammasi o'tadi):
+   - Migratsiya barcha jadvalni yaratadi + ikki marta ishga tushsa xato bermaydi
+   - CRUD (accounts, transactions, debts+payments, funds+movements)
+   - **Contour izolyatsiyasi:** biznes so'rovi shaxsiy yozuvni qaytarmasligi (list va id bo'yicha) isbotlangan
+   - Seed idempotent + har kategoriya/guruh kaliti uchala tilda mavjud
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Barcha CRUD test bilan qoplangan va o'tadi (13 test)
+- ✅ Contour izolyatsiyasi testi bor va o'tadi
+- ✅ Migratsiya ikki marta ishga tushsa xato bermaydi
+- ✅ Seed ma'lumot uchala tilda mavjud (test bilan isbotlangan)
+- ✅ `tsc --noEmit`, `lint`, `prettier` — toza
+
+### Test infratuzilmasi eslatmasi
+
+`expo-sqlite` Node/Jest'da ishlamaydi. Yechim: `SmartaDb` interfeysi + ikkita adapter — ilovada `expo-sqlite`, testda Node 22 ichki `node:sqlite` (`__tests__/support/nodeSqlite.ts`, faqat testlar import qiladi, Metro bundle'iga tushmaydi). Ikkalasi ham SQLite — SQL bir xil.
+
+---
+
+## Sprint 2 — Ikki kontur va yozuv kiritish
 
 Holat: boshlanmagan.

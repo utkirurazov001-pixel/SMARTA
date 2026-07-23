@@ -2,6 +2,8 @@
 // Aksent rangi kontur bo'yicha o'zgaradi: shaxsiy = qahrabo, biznes = ishkor.
 // Bu mahsulotning signature elementi, tasodifiy emas.
 
+import type { Contour } from '../domain/types';
+
 export const colors = {
   siyoh: '#12212E', // asosiy matn, qoraymtir
   qogoz: '#F7F9F9', // fon
@@ -11,8 +13,6 @@ export const colors = {
   qizil: '#A3352C', // chiqim
   kul: '#5E6E77', // ikkilamchi matn
 } as const;
-
-export type Contour = 'shaxsiy' | 'biznes';
 
 // Kontur bo'yicha aksent rangi. Butun ilova shu funksiyaga tayanadi.
 export function accentFor(contour: Contour): string {

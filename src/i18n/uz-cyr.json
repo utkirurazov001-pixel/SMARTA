@@ -22,5 +22,37 @@
     "fond": "Мақсадли фондлар",
     "hisobot": "Ҳисоботлар",
     "tayyor": "Бу экран кейинги спринтда тўлдирилади"
+  },
+  "guruh": {
+    "turmush": "Турмуш",
+    "ijtimoiy": "Ижтимоий",
+    "moliya": "Молия",
+    "daromad": "Даромад",
+    "xarajat": "Харажат",
+    "majburiyat": "Мажбурият"
+  },
+  "kategoriya": {
+    "shaxsiy": {
+      "uy_rozgor": "Уй-рўзғор",
+      "transport": "Транспорт",
+      "soglik": "Соғлиқ",
+      "talim": "Таълим",
+      "oila": "Оила",
+      "marosim": "Маросим ва меҳмон",
+      "yordam": "Ёрдам ва садақа",
+      "jamgarma": "Жамғарма",
+      "qarz": "Қарз"
+    },
+    "biznes": {
+      "savdo_daromadi": "Савдо даромади",
+      "doimiy_xarajat": "Доимий харажат",
+      "ish_haqi": "Иш ҳақи",
+      "soliq": "Солиқ ва мажбурий тўлов",
+      "tovar": "Товар ва хомашё",
+      "logistika": "Логистика",
+      "marketing": "Маркетинг",
+      "moliyaviy": "Молиявий",
+      "investitsiya": "Инвестиция"
+    }
   }
 }
