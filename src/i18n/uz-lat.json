@@ -180,5 +180,12 @@
       "chiqim": "Chiqim",
       "balans": "Balans"
     }
+  },
+  "tez": {
+    "sarlavha": "Tez kiritish",
+    "joyholder": "Masalan: 400 ming benzin",
+    "aniqlanmadi": "Aniqlanmadi — quyida to'ldiring",
+    "tasdiqlash": "Tasdiqlash",
+    "toliq": "Yoki to'liq forma"
   }
 }

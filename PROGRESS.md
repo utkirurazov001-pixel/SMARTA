@@ -229,6 +229,33 @@ To'liq eksport joriy kontur ma'lumotini beradi (CLAUDE.md 2-bo'lim 3-qoida — c
 
 ---
 
-## Sprint 7 — Tez kiritish (matn tahlili)
+## Sprint 7 — Tez kiritish (matn tahlili) ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+> AI ISHLATILMAGAN — faqat lokal qoidalar (CLAUDE.md 11-bo'lim, "AI orqali kategoriyalash" MVP'da yo'q).
+
+### Bajarilgan ishlar
+
+1. **Parser** (`domain/tahlil.ts`, sof funksiyalar):
+   - `summaTahlil`: "400 ming", "400000", "2 mln", "2,5 mln", "400k", "1 mlrd", "200 тыс".
+   - `sanaTahlil`: "bugun", "kecha", "12-iyul" (uch tilda).
+   - `kategoriyaTahlil`: kalit so'zlar lug'ati bo'yicha (`tahlilLugat.ts`, uchala til).
+   - `tahlilQil`: sana bo'lagini ajratib summani aniq oladi (12-iyul → 12 summa deb o'qilmaydi).
+2. **O'rganish** (`store/useOrgangan.ts`): foydalanuvchi tuzatgan tasnif `${kontur}:${kalit}` bo'yicha eslab qolinadi (AsyncStorage), keyingi safar taklif qilinadi.
+3. **UI** (`TezKiritish`): matn kiritiladi → natija **TAKLIF** sifatida ko'rsatiladi (summa, tur, kategoriya, sana). Foydalanuvchi tasdiqlaydi — **ilova hech qachon jimgina yozmaydi**. Kategoriyani tuzatish mumkin (o'rganadi). Aniqlanmasa — xato bermaydi, to'liq formaga yo'naltiradi.
+4. Yozuv tab qayta tuzildi: tez kiritish birinchi; to'liq forma alohida route (`tranzaksiya/yangi`).
+
+### Qabul mezoni — tekshirildi
+
+- ✅ **50 namuna jumlada aniqlik ≥ 80%** (`tahlil.test.ts` — test to'plami bilan o'lchanadi)
+- ✅ Aniqlay olmagan holatda oddiy forma ochiladi — xato bermaydi
+- ✅ Uchala til uchun kalit so'zlar mavjud (uz-lat, uz-cyr, ru)
+- ✅ `tsc`, `lint`, `prettier` toza; 75 test; Metro bundle yig'iladi
+
+---
+
+## Sprint 8 — Sayqal va chiqarishga tayyorlash
 
 Holat: boshlanmagan.

@@ -1,16 +1,21 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import KonturTanlagich from '../../src/components/KonturTanlagich';
-import TranzaksiyaForma from '../../src/components/TranzaksiyaForma';
-import { colors } from '../../src/theme/tokens';
+import TezKiritish from '../../src/components/TezKiritish';
+import { useAccent } from '../../src/store/useAccent';
+import { colors, fonts, radius, spacing } from '../../src/theme/tokens';
 
-// Yozuv qo'shish ekrani. Har fokusda forma yangi ochiladi (tez kiritish uchun).
+// Yozuv ekrani: tez kiritish (matn tahlili) birinchi; to'liq forma alohida.
 export default function YozuvEkran() {
+  const { t } = useTranslation();
   const router = useRouter();
+  const accent = useAccent();
   const [kalit, setKalit] = useState(0);
 
+  // Har fokusda tez kiritishni yangilaymiz.
   useFocusEffect(
     useCallback(() => {
       setKalit((k) => k + 1);
@@ -18,13 +23,29 @@ export default function YozuvEkran() {
   );
 
   return (
-    <View style={styles.konteyner}>
+    <ScrollView style={styles.konteyner} keyboardShouldPersistTaps="handled">
       <KonturTanlagich />
-      <TranzaksiyaForma key={kalit} onSaved={() => router.navigate('/')} />
-    </View>
+      <TezKiritish key={kalit} onSaved={() => router.navigate('/')} />
+      <Pressable
+        accessibilityRole="button"
+        style={[styles.toliq, { borderColor: accent }]}
+        onPress={() => router.push('/tranzaksiya/yangi')}
+      >
+        <Text style={[styles.toliqMatn, { color: accent }]}>{t('tez.toliq')}</Text>
+      </Pressable>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   konteyner: { flex: 1, backgroundColor: colors.qogoz },
+  toliq: {
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.xl,
+    borderWidth: 1.5,
+    borderRadius: radius.lg,
+    paddingVertical: spacing.sm,
+    alignItems: 'center',
+  },
+  toliqMatn: { fontFamily: fonts.sarlavha, fontSize: 15 },
 });
