@@ -105,6 +105,39 @@ Har sprint tugagach shu faylga bajarilgan ish yoziladi (CLAUDE.md 9-bo'lim, 6-ba
 
 ---
 
-## Sprint 3 — Bosh ekran
+## Sprint 3 — Bosh ekran ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **Sof mantiq + test** (11 yangi test, jami 38):
+   - `domain/balans.ts` — `hisobBalansi` (kirim qo'shadi, chiqim/kochirish/investitsiya ayiradi, kiruvchi kochirish qo'shadi), `umumiyQoldiq`, `hisobTartibi` (NAQD birinchi).
+   - `domain/davr.ts` — `davrOraliq` (bu oy / o'tgan oy / 3 oy + oldingi teng davr), `oraliqIchida`, `foizOzgarish` (0 ga bo'lishdan himoya).
+   - `utils/format.ts` — `qisqaSom` (22 000 000 → "22,0 mln").
+   - `utils/pul.ts` — `pulMatni` + `NIQOB`: **yashirin holatda hech qanday raqam qaytmaydi** (test bilan isbotlangan).
+2. **Ma'lumot hook'i** (`db/useLedger.ts`): kontur bo'yicha hisob/kategoriya/tranzaksiya, fokusda yangilanadi — bosh ekran uchun yagona manba.
+3. **Bosh ekran** (`FlatList`, statistika header'da):
+   - Umumiy qoldiq kartasi + **"qoldiqni yashirish"** tugmasi (holat saqlanadi).
+   - Davr tanlash: bu oy / o'tgan oy / 3 oy.
+   - Kirim/chiqim ko'rsatkichlari + **o'tgan davrga nisbatan foiz** (↑/↓).
+   - **Biznes:** sof foyda kartasi. **Shaxsiy:** oylik limit + progress chizig'i.
+   - Hisoblar bo'yicha ajratma: **NAQD birinchi va ajratilgan**.
+   - So'nggi yozuvlar ro'yxati + **qidiruv** (kategoriya/kontragent/izoh/hisob bo'yicha).
+   - Katta summalar qisqartirib ko'rsatiladi (`qisqa`).
+4. Store: `oylikLimit` qo'shildi (saqlanadi). Til almashtirgich bosh ekran footer'ida.
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Yashirish tugmasi hech bir raqamni ochiq qoldirmaydi (`pul.test.ts` — barcha summalar niqob, raqamsiz)
+- ✅ Katta summalar qisqartiriladi (22 000 000 → "22,0 mln", test bilan)
+- ✅ Barcha hisob-kitob `/src/domain` ichida va test bilan qoplangan
+- ✅ Davr almashganda ma'lumot to'g'ri filtrlanadi (`oraliqIchida`)
+- ✅ `tsc`, `lint`, `prettier` toza; 38 test; Metro bundle yig'iladi
+
+---
+
+## Sprint 4 — Qarz va kredit moduli
 
 Holat: boshlanmagan.

@@ -92,5 +92,24 @@
     "ha": "Ha",
     "yoq": "Yo'q",
     "yopish": "Yopish"
+  },
+  "davr": {
+    "buOy": "Bu oy",
+    "otganOy": "O'tgan oy",
+    "ucOy": "3 oy"
+  },
+  "son": {
+    "mln": "mln",
+    "mlrd": "mlrd"
+  },
+  "bosh": {
+    "qoldiq": "Umumiy qoldiq",
+    "sofFoyda": "Sof foyda",
+    "limit": "Oylik limit",
+    "limitBelgilanmagan": "Limit belgilanmagan",
+    "hisoblar": "Hisoblar",
+    "yashir": "Yashirish",
+    "korsat": "Ko'rsatish",
+    "taqqoslash": "o'tgan davrga nisbatan"
   }
 }
