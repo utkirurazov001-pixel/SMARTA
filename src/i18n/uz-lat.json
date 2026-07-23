@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "Smarta"
+  },
+  "tabs": {
+    "bosh": "Bosh",
+    "yozuv": "Yozuv",
+    "qarz": "Qarz",
+    "fond": "Fond",
+    "hisobot": "Hisobot"
+  },
+  "til": {
+    "sarlavha": "Til",
+    "uz_lat": "O'zbekcha",
+    "uz_cyr": "Ўзбекча",
+    "ru": "Русский"
+  },
+  "ekran": {
+    "bosh": "Bosh ekran",
+    "yozuv": "Yozuv kiritish",
+    "qarz": "Qarz va kredit",
+    "fond": "Maqsadli fondlar",
+    "hisobot": "Hisobotlar",
+    "tayyor": "Bu ekran keyingi sprintda to'ldiriladi"
+  }
+}
