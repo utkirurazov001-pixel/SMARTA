@@ -159,5 +159,26 @@
       "soliq": "Резерв на налоги",
       "rivojlanish": "Фонд развития"
     }
+  },
+  "hisobot": {
+    "kirimChiqim": "Книга доходов-расходов",
+    "kategoriyaHisoboti": "По категориям",
+    "kontragentHisoboti": "По контрагентам",
+    "toliqEksport": "Полный экспорт",
+    "toliqIzoh": "Все данные, без ограничений",
+    "ustun": {
+      "sana": "Дата",
+      "tur": "Тип",
+      "kategoriya": "Категория",
+      "hisob": "Счёт",
+      "kontragent": "Контрагент",
+      "summa": "Сумма",
+      "izoh": "Заметка",
+      "jami": "Всего",
+      "soni": "Кол-во",
+      "kirim": "Доход",
+      "chiqim": "Расход",
+      "balans": "Баланс"
+    }
   }
 }

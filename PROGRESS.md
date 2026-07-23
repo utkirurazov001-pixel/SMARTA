@@ -199,6 +199,36 @@ Fondlar alohida "envelope" daftar sifatida modellashtirildi (hisob balansiga bev
 
 ---
 
-## Sprint 6 — Hisobot va eksport
+## Sprint 6 — Hisobot va eksport ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **Sof mantiq** (`domain/hisobot.ts`, 6 test): `kategoriyaBoyicha` (kategoriya yig'indisi, kamayish tartibida), `kontragentBoyicha` (kirim/chiqim/balans), `toCsv` (vergul/qo'shtirnoq ekranlash, 1000 qator).
+2. **Eksport xizmati** (`utils/eksport.ts`): `matnEksport` (CSV/JSON, CSV uchun UTF-8 BOM — Excel kirill/lotin), `xlsxEksport` (SheetJS → base64), `pdfEksport` (expo-print HTML jadval), `expo-sharing` bilan ulashish.
+3. **To'liq eksport** (`repositories/toliqEksport.ts`): kontur barcha jadvallari, barcha qatorlar (o'chirilganlar ham) — hech qanday cheklovsiz.
+4. **Hisobot tab:** davr tanlash + 4 hisobot: kirim-chiqim kitobi (XLSX/PDF), kategoriya (XLSX/PDF), kontragent (XLSX), to'liq eksport (CSV+JSON). Har biri 1 bosishda.
+
+### Qat'iy qoida (CLAUDE.md 2-bo'lim, 5-qoida)
+
+To'liq eksportda hech qanday cheklov, obuna talabi yoki ma'lumot qisqartirishi **YO'Q**.
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Har hisobot 3 bosishdan kam (tab → tugma = 1 bosish)
+- ✅ Katta hajm: `toCsv` 1000 qatorni ishlaydi (test bilan); barcha builder O(n)
+- ✅ CSV UTF-8 BOM + standart vergul ajratgich — Excel va Google Sheets'da to'g'ri ochiladi
+- ✅ Hisobot sarlavhalari uchala tilda (i18n `hisobot.ustun.*`)
+- ✅ `tsc`, `lint`, `prettier` toza; 71 test; Metro bundle (SheetJS bilan) yig'iladi
+
+### Eslatma
+
+To'liq eksport joriy kontur ma'lumotini beradi (CLAUDE.md 2-bo'lim 3-qoida — contour izolyatsiyasi so'rov darajasida saqlanadi). JSON — to'liq dump (barcha jadvallar); CSV — to'liq tranzaksiya jurnali.
+
+---
+
+## Sprint 7 — Tez kiritish (matn tahlili)
 
 Holat: boshlanmagan.

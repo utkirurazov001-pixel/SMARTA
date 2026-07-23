@@ -159,5 +159,26 @@
       "soliq": "Soliq zaxirasi",
       "rivojlanish": "Rivojlanish fondi"
     }
+  },
+  "hisobot": {
+    "kirimChiqim": "Kirim-chiqim kitobi",
+    "kategoriyaHisoboti": "Kategoriya bo'yicha",
+    "kontragentHisoboti": "Kontragent bo'yicha",
+    "toliqEksport": "To'liq eksport",
+    "toliqIzoh": "Barcha ma'lumot, cheklovsiz",
+    "ustun": {
+      "sana": "Sana",
+      "tur": "Tur",
+      "kategoriya": "Kategoriya",
+      "hisob": "Hisob",
+      "kontragent": "Kontragent",
+      "summa": "Summa",
+      "izoh": "Izoh",
+      "jami": "Jami",
+      "soni": "Soni",
+      "kirim": "Kirim",
+      "chiqim": "Chiqim",
+      "balans": "Balans"
+    }
   }
 }
