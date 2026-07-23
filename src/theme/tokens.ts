@@ -2,6 +2,8 @@
 // Aksent rangi kontur bo'yicha o'zgaradi: shaxsiy = qahrabo, biznes = ishkor.
 // Bu mahsulotning signature elementi, tasodifiy emas.
 
+import type { TextStyle } from 'react-native';
+
 import type { Contour } from '../domain/types';
 
 export const colors = {
@@ -30,10 +32,10 @@ export const fonts = {
 
 // Pul summasi doim monospace shriftda va tabular-nums bilan ko'rsatiladi —
 // daftar ustuni effekti (CLAUDE.md 5-bo'lim).
-export const numeric = {
+export const numeric: Pick<TextStyle, 'fontFamily' | 'fontVariant'> = {
   fontFamily: fonts.raqam,
-  fontVariant: ['tabular-nums'] as const,
-} as const;
+  fontVariant: ['tabular-nums'],
+};
 
 export const spacing = {
   xs: 4,

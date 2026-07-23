@@ -74,6 +74,37 @@ Har sprint tugagach shu faylga bajarilgan ish yoziladi (CLAUDE.md 9-bo'lim, 6-ba
 
 ---
 
-## Sprint 2 — Ikki kontur va yozuv kiritish
+## Sprint 2 — Ikki kontur va yozuv kiritish ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **Zustand store** (`src/store/useSettings.ts`): joriy kontur, til, "qoldiqni yashirish". AsyncStorage'da saqlanadi (ilova qayta ochilganda tiklanadi). Til o'zgarganda i18n moslashadi.
+2. **Aksent** (`src/store/useAccent.ts`): joriy konturga mos rang. Kontur almashtirgich (`KonturTanlagich`) — butun ilova aksenti qahrabo↔ishkor almashadi (tab rangi ham).
+3. **DB provider** (`src/db/DbProvider.tsx`): bazani ochadi (migratsiya+seed), kontekst orqali `useDb()`.
+4. **Yozuv formasi** (`TranzaksiyaForma`): summa (formatlangan, monospace), tur (kirim/chiqim/kochirish), kategoriya (kochirishda yashirin), hisob, sana (date picker), kontragent, izoh. Yaratish va tahrirlash.
+5. **Kategoriya/hisob tanlash** (`TanlashModal`): guruh + qidiruv bilan.
+6. **So'nggi yozuvlar** (`TranzaksiyaRoyxati`): konturdagi yozuvlar, fokusda yangilanadi, bosilganda tahrirlash ekraniga o'tadi. `qoldiqYashirin` holatida summalar niqoblanadi.
+7. **Tahrirlash/o'chirish** (`app/tranzaksiya/[id].tsx`): forma orqali tahrir + soft delete (tasdiq bilan).
+8. **Til almashtirgich** endi store orqali (saqlanadi).
+9. **Sof mantiq + test:** `src/domain/hisob.ts` — `xarajatYigindisi` FAQAT `chiqim`ni sanaydi; kochirish va investitsiya xarajat EMAS. `src/utils/format.ts` — pul formati. 6 yangi test.
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Kontur almashganda rang (aksent) va ma'lumot (ro'yxat/forma) to'liq o'zgaradi
+- ✅ Yozuv qo'shish qisqa: tur→summa→kategoriya→hisob→saqlash (asosiy holatda hisob avtomatik tanlangan)
+- ✅ **Kochirish xarajatga qo'shilmasligi** testda isbotlangan (`hisob.test.ts`)
+- ✅ Uchala tilda ishlaydi (barcha matn i18n orqali, uch fayl yangilangan)
+- ✅ `tsc`, `lint`, `prettier` toza; 20 test o'tadi; Metro bundle yig'iladi
+
+### Eslatma
+
+`src/store` papkasi qo'shildi (CLAUDE.md 4-bo'lim ro'yxatida yo'q edi, lekin Zustand store uchun tabiiy joy). Kontur almashtirgich hozircha bosh va yozuv ekranlari tepasida; global header Sprint 3/8'da ko'rib chiqiladi.
+
+---
+
+## Sprint 3 — Bosh ekran
 
 Holat: boshlanmagan.

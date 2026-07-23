@@ -54,5 +54,43 @@
       "moliyaviy": "Moliyaviy",
       "investitsiya": "Investitsiya"
     }
+  },
+  "kontur": {
+    "shaxsiy": "Shaxsiy",
+    "biznes": "Biznes"
+  },
+  "tur": {
+    "kirim": "Kirim",
+    "chiqim": "Chiqim",
+    "kochirish": "Ko'chirish",
+    "investitsiya": "Investitsiya"
+  },
+  "yozuv": {
+    "summa": "Summa",
+    "tur": "Tur",
+    "kategoriya": "Kategoriya",
+    "hisob": "Hisob",
+    "sana": "Sana",
+    "kontragent": "Kontragent",
+    "izoh": "Izoh",
+    "saqlash": "Saqlash",
+    "yangi": "Yangi yozuv",
+    "tahrirlash": "Yozuvni tahrirlash",
+    "ochirish": "O'chirish",
+    "ochirilsinmi": "Yozuv o'chirilsinmi?",
+    "kategoriya_tanlang": "Kategoriyani tanlang",
+    "hisob_tanlang": "Hisobni tanlang",
+    "tanlanmagan": "Tanlanmagan",
+    "qidiruv": "Qidirish",
+    "songgi": "So'nggi yozuvlar",
+    "bosh": "Hali yozuv yo'q",
+    "summa_kerak": "Summa 0 dan katta bo'lishi kerak",
+    "hisob_kerak": "Hisobni tanlang"
+  },
+  "umumiy": {
+    "bekor": "Bekor",
+    "ha": "Ha",
+    "yoq": "Yo'q",
+    "yopish": "Yopish"
   }
 }

@@ -54,5 +54,43 @@
       "moliyaviy": "Финансовые",
       "investitsiya": "Инвестиции"
     }
+  },
+  "kontur": {
+    "shaxsiy": "Личный",
+    "biznes": "Бизнес"
+  },
+  "tur": {
+    "kirim": "Доход",
+    "chiqim": "Расход",
+    "kochirish": "Перемещение",
+    "investitsiya": "Инвестиция"
+  },
+  "yozuv": {
+    "summa": "Сумма",
+    "tur": "Тип",
+    "kategoriya": "Категория",
+    "hisob": "Счёт",
+    "sana": "Дата",
+    "kontragent": "Контрагент",
+    "izoh": "Заметка",
+    "saqlash": "Сохранить",
+    "yangi": "Новая запись",
+    "tahrirlash": "Редактировать запись",
+    "ochirish": "Удалить",
+    "ochirilsinmi": "Удалить запись?",
+    "kategoriya_tanlang": "Выберите категорию",
+    "hisob_tanlang": "Выберите счёт",
+    "tanlanmagan": "Не выбрано",
+    "qidiruv": "Поиск",
+    "songgi": "Последние записи",
+    "bosh": "Пока нет записей",
+    "summa_kerak": "Сумма должна быть больше 0",
+    "hisob_kerak": "Выберите счёт"
+  },
+  "umumiy": {
+    "bekor": "Отмена",
+    "ha": "Да",
+    "yoq": "Нет",
+    "yopish": "Закрыть"
   }
 }

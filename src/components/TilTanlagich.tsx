@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import { colors, fonts, radius, spacing } from '../theme/tokens';
 import { TILLAR, type Til } from '../i18n';
+import { useSettings } from '../store/useSettings';
 
-// Sprint 0 til almashtirgich. Til holati keyingi sprintda Zustand store'ga ko'chadi;
-// hozircha i18next'ning o'zi qayta render qilishga yetarli.
+// Til almashtirgich. Tanlangan til Zustand store orqali saqlanadi (ilova qayta
+// ochilganda tiklanadi).
 export default function TilTanlagich() {
-  const { t, i18n } = useTranslation();
-  const joriy = i18n.language as Til;
+  const { t } = useTranslation();
+  const joriy = useSettings((s) => s.til);
+  const setTil = useSettings((s) => s.setTil);
 
   const nomlar: Record<Til, string> = {
     'uz-lat': t('til.uz_lat'),
@@ -27,7 +29,7 @@ export default function TilTanlagich() {
               key={til}
               accessibilityRole="button"
               accessibilityState={{ selected: tanlangan }}
-              onPress={() => void i18n.changeLanguage(til)}
+              onPress={() => setTil(til)}
               style={[styles.tugma, tanlangan && styles.tugmaFaol]}
             >
               <Text style={[styles.tugmaMatn, tanlangan && styles.tugmaMatnFaol]}>
