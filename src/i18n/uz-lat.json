@@ -166,6 +166,9 @@
     "kontragentHisoboti": "Kontragent bo'yicha",
     "toliqEksport": "To'liq eksport",
     "toliqIzoh": "Barcha ma'lumot, cheklovsiz",
+    "zaxira": "Zaxira nusxa",
+    "saqlash": "Saqlash",
+    "tiklash": "Tiklash",
     "ustun": {
       "sana": "Sana",
       "tur": "Tur",
@@ -187,5 +190,28 @@
     "aniqlanmadi": "Aniqlanmadi — quyida to'ldiring",
     "tasdiqlash": "Tasdiqlash",
     "toliq": "Yoki to'liq forma"
+  },
+  "onboarding": {
+    "keyingi": "Keyingi",
+    "boshlash": "Boshlash",
+    "otkazish": "O'tkazib yuborish",
+    "s1_sarlavha": "Ikki pul, bir ilova",
+    "s1_matn": "Shaxsiy va biznes puli har doim alohida. Hech qachon aralashmaydi.",
+    "s2_sarlavha": "Tez yozuv",
+    "s2_matn": "\"400 ming benzin\" deb yozing — ilova o'zi taklif qiladi, siz tasdiqlaysiz.",
+    "s3_sarlavha": "Ma'lumot sizniki",
+    "s3_matn": "Hamma narsa qurilmangizda. Reklama yo'q. Istagan vaqtda to'liq eksport qilasiz."
+  },
+  "qulf": {
+    "kiriting": "PIN kiriting",
+    "ornating": "PIN o'rnating (4 raqam)",
+    "takrorlang": "PIN'ni takrorlang",
+    "xato": "Noto'g'ri PIN",
+    "mos_emas": "PIN mos kelmadi",
+    "biometrik": "Biometrika bilan ochish",
+    "ochish": "Ochish"
+  },
+  "offline": {
+    "matn": "Internet yo'q — offline rejim"
   }
 }

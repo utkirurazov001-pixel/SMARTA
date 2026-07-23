@@ -256,6 +256,38 @@ To'liq eksport joriy kontur ma'lumotini beradi (CLAUDE.md 2-bo'lim 3-qoida — c
 
 ---
 
-## Sprint 8 — Sayqal va chiqarishga tayyorlash
+## Sprint 8 — Sayqal va chiqarishga tayyorlash ✅
 
-Holat: boshlanmagan.
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **i18n to'liqligi** (`__tests__/i18n/toliqlik.test.ts`): uch fayl kalitlari **aynan bir xil** — yetishmayotgan kalit yo'q (test bilan kafolatlangan).
+2. **Ilova qulfi** (`utils/qulf.ts`, `Qulf`): PIN (expo-secure-store — shifrlangan) + biometrika (expo-local-authentication). **Qulf ochilmaguncha ilova ko'rinmaydi** (`IlovaDarvoza`).
+3. **Onboarding** (`Onboarding`): 3 ekran — ikki kontur, tez yozuv, maxfiylik. Oxirida ixtiyoriy PIN. Bir marta ko'rsatiladi (`useIlovaHolat`).
+4. **Offline indikatori** (`OfflineIndikator`): expo-network bilan holat belgisi (to'siq emas — offline-first).
+5. **Zaxira** (`repositories/zaxira.ts` + hisobot tab): JSON saqlash va **tiklash** (INSERT OR IGNORE, idempotent — 2 test). Fayl tanlash `expo-document-picker`.
+6. **Accessibility:** barcha bosiladigan element `accessibilityRole="button"`; qulf/onboarding maydonlarida `accessibilityLabel`; minimal teginish maydoni 44px. Katta shrift: RN standart masshtablash (`allowFontScaling` o'chirilmagan).
+7. **Bo'sh holatlar** har ro'yxatda (bosh, qarz, fond, hisobot) mavjud.
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Barcha testlar o'tadi (**79 test**)
+- ✅ Katta shrift qo'llab-quvvatlanadi (matnlar tizim masshtabiga ergashadi)
+- ✅ Ilova qulfi ochilmaguncha hech qanday ma'lumot ko'rinmaydi (`IlovaDarvoza` gate)
+- ✅ Uchala til to'liq tarjima — yetishmayotgan kalit yo'q (test bilan)
+- ✅ Yangi foydalanuvchi onboardingdan so'ng birinchi yozuvni tez kiritish orqali kirita oladi
+- ✅ `tsc`, `lint`, `prettier` toza; Metro bundle (barcha native modullar bilan) yig'iladi
+
+---
+
+# Yakuniy holat — MVP tugallandi 🎉
+
+**8 sprint** (0–8) bajarildi. **79 test** o'tadi. `tsc`, `lint`, `prettier` toza. Metro bundle yig'iladi.
+
+Barcha qat'iy qoidalar (CLAUDE.md 2-bo'lim) saqlangan: reklama yo'q, kredit taklifi yo'q, contour izolyatsiyasi (so'rov darajasida, test bilan), offline-first, cheklovsiz eksport, pul harakati yo'q, uchinchi tomonga ma'lumot faqat foydalanuvchi roziligi bilan (eksport/ulashish).
+
+**Keyingi fazalar (MVP'da yo'q — CLAUDE.md 11-bo'lim):** backend/sinxronizatsiya, bank/Click/Payme, OCR, AI kategoriyalash, jamoa/rollar, soliq hisoboti, ko'p korxona.
+
+**Foydalanuvchi tomonidan sinaladi:** telefonda ilovani ochib har sprintni real qurilmada tekshirish (dev-server remote muhitda telefonga ulanmaydi).

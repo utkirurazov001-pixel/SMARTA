@@ -4,6 +4,7 @@
 // QAT'IY (CLAUDE.md 2-bo'lim, 5-qoida): to'liq eksportda hech qanday cheklov,
 // obuna talabi yoki ma'lumot qisqartirishi YO'Q.
 
+import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system/legacy';
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
@@ -56,4 +57,19 @@ function html(sarlavha: string, jadval: Jadval): string {
 export async function pdfEksport(sarlavha: string, jadval: Jadval): Promise<void> {
   const { uri } = await Print.printToFileAsync({ html: html(sarlavha, jadval) });
   await ulash(uri);
+}
+
+// Zaxira JSON faylini tanlab o'qiydi. Bekor qilinsa null.
+export async function zaxiraTanlaVaOqi(): Promise<Record<string, unknown[]> | null> {
+  const r = await DocumentPicker.getDocumentAsync({
+    type: 'application/json',
+    copyToCacheDirectory: true,
+  });
+  if (r.canceled || !r.assets || r.assets.length === 0) {
+    return null;
+  }
+  const matn = await FileSystem.readAsStringAsync(r.assets[0].uri, {
+    encoding: FileSystem.EncodingType.UTF8,
+  });
+  return JSON.parse(matn) as Record<string, unknown[]>;
 }

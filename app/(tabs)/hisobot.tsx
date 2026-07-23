@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import DavrTanlagich from '../../src/components/DavrTanlagich';
@@ -19,7 +19,8 @@ import { useAccent } from '../../src/store/useAccent';
 import { useSettings } from '../../src/store/useSettings';
 import { colors, fonts, radius, spacing } from '../../src/theme/tokens';
 import { formatKun } from '../../src/utils/date';
-import { matnEksport, pdfEksport, xlsxEksport } from '../../src/utils/eksport';
+import { tiklash } from '../../src/repositories/zaxira';
+import { matnEksport, pdfEksport, xlsxEksport, zaxiraTanlaVaOqi } from '../../src/utils/eksport';
 import { kategoriyaNomi } from '../../src/utils/labels';
 
 // Hisobotlar va ma'lumot eksporti. Har hisobot 3 bosishdan kam masofada.
@@ -116,6 +117,16 @@ export default function HisobotEkran() {
     }
   }
 
+  // Zaxiradan tiklash: JSON faylni tanlab, yozuvlarni qayta yozadi (INSERT OR IGNORE).
+  async function zaxiraTikla() {
+    const dump = await zaxiraTanlaVaOqi();
+    if (!dump) {
+      return;
+    }
+    const soni = await tiklash(db, dump);
+    Alert.alert(t('hisobot.tiklash'), String(soni));
+  }
+
   return (
     <ScrollView style={styles.konteyner}>
       <KonturTanlagich />
@@ -176,6 +187,11 @@ export default function HisobotEkran() {
       <Bolim sarlavha={t('hisobot.toliqEksport')} izoh={t('hisobot.toliqIzoh')}>
         <Tugma matn="CSV" accent={accent} onPress={() => toliqEksport('csv')} />
         <Tugma matn="JSON" accent={accent} onPress={() => toliqEksport('json')} />
+      </Bolim>
+
+      <Bolim sarlavha={t('hisobot.zaxira')}>
+        <Tugma matn={t('hisobot.saqlash')} accent={accent} onPress={() => toliqEksport('json')} />
+        <Tugma matn={t('hisobot.tiklash')} accent={accent} onPress={zaxiraTikla} />
       </Bolim>
     </ScrollView>
   );
