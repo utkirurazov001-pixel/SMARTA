@@ -137,5 +137,27 @@
     "annuitet": "Annuitet",
     "differensial": "Differensial",
     "muddatsiz": "Muddatsiz"
+  },
+  "fond": {
+    "yangi": "Yangi fond",
+    "nom": "Nom",
+    "maqsad": "Maqsad summasi",
+    "oylikReja": "Oylik reja",
+    "yigilgan": "Yig'ilgan",
+    "qolgan": "Qolgan",
+    "maqsadSana": "Maqsadga yetish sanasi",
+    "qoshish": "Qo'shish",
+    "olish": "Olish",
+    "harakatlar": "Harakatlar",
+    "bosh": "Fond yo'q",
+    "shablonlar": "Tayyor shablonlar",
+    "tavsiya": "Tavsiya etilgan",
+    "template": {
+      "umra": "Umra fondi",
+      "zaxira": "Zaxira jamg'arma",
+      "yordam": "Yordam fondi",
+      "soliq": "Soliq zaxirasi",
+      "rivojlanish": "Rivojlanish fondi"
+    }
   }
 }

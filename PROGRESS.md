@@ -174,6 +174,31 @@ Modulda hech qanday kredit taklifi, bank havolasi yoki refinansirovka tavsiyasi 
 
 ---
 
-## Sprint 5 — Maqsadli fondlar
+## Sprint 5 — Maqsadli fondlar ✅
+
+**Sana:** 2026-07-23
+**Holat:** Tugagan.
+
+### Bajarilgan ishlar
+
+1. **Sof mantiq** (`domain/fond.ts`, 8 test): `fondYigilgan` (qo'shish−olish), `fondProgress` (qolgan+foiz), `maqsadSanasi` (oylik reja asosida, reja 0 → null, yetgan → now), `zaxiraTavsiya` (oylik xarajatning 3 barobari).
+2. **Shablonlar** (`domain/fondShablonlar.ts`): Umra, Zaxira jamg'arma, Yordam, Soliq zaxirasi (biznes), Rivojlanish fondi (biznes) — kontur bo'yicha filtrlanadi.
+3. **Fond alohida daftar (envelope):** fond harakatlari `fund_movements`da yuritiladi va tranzaksiya jurnaliga tushmaydi → **umumiy xarajat statistikasiga ta'sir qilmaydi** (integratsiya testi bilan isbotlangan).
+4. **UI:** `useFunds` hook; fond tab (ro'yxat + progress + shablon chiplari + qo'shish); yaratish ekrani (shablon prefill + zaxira uchun **3× tavsiya**); detal ekran (progress chizig'i, yig'ilgan/qolgan, **maqsad sanasi**, qo'shish/olish, harakatlar tarixi).
+
+### Qabul mezoni — tekshirildi
+
+- ✅ Fondga o'tkazish umumiy xarajat statistikasiga qo'shilmaydi (`fond.test.ts` — xarajat faqat haqiqiy chiqim)
+- ✅ Maqsad sanasi hisobi to'g'ri (test bilan)
+- ✅ Fond bo'sh bo'lganda empty state ko'rinadi
+- ✅ `tsc`, `lint`, `prettier` toza; 65 test; Metro bundle yig'iladi
+
+### Interpretatsiya eslatmasi
+
+Fondlar alohida "envelope" daftar sifatida modellashtirildi (hisob balansiga bevosita tranzaksiya yaratmaydi). Sabab: joriy schema'da kochirishning "manba" hisobi majburiy; fond hisob emas. Bu contour balansini buzmaydi va "xarajat EMAS" qoidasini to'liq saqlaydi.
+
+---
+
+## Sprint 6 — Hisobot va eksport
 
 Holat: boshlanmagan.
