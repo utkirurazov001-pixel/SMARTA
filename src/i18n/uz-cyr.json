@@ -1,0 +1,217 @@
+{
+  "app": {
+    "name": "Smarta"
+  },
+  "tabs": {
+    "bosh": "Бош",
+    "yozuv": "Ёзув",
+    "qarz": "Қарз",
+    "fond": "Фонд",
+    "hisobot": "Ҳисобот"
+  },
+  "til": {
+    "sarlavha": "Тил",
+    "uz_lat": "O'zbekcha",
+    "uz_cyr": "Ўзбекча",
+    "ru": "Русский"
+  },
+  "ekran": {
+    "bosh": "Бош экран",
+    "yozuv": "Ёзув киритиш",
+    "qarz": "Қарз ва кредит",
+    "fond": "Мақсадли фондлар",
+    "hisobot": "Ҳисоботлар",
+    "tayyor": "Бу экран кейинги спринтда тўлдирилади"
+  },
+  "guruh": {
+    "turmush": "Турмуш",
+    "ijtimoiy": "Ижтимоий",
+    "moliya": "Молия",
+    "daromad": "Даромад",
+    "xarajat": "Харажат",
+    "majburiyat": "Мажбурият"
+  },
+  "kategoriya": {
+    "shaxsiy": {
+      "uy_rozgor": "Уй-рўзғор",
+      "transport": "Транспорт",
+      "soglik": "Соғлиқ",
+      "talim": "Таълим",
+      "oila": "Оила",
+      "marosim": "Маросим ва меҳмон",
+      "yordam": "Ёрдам ва садақа",
+      "jamgarma": "Жамғарма",
+      "qarz": "Қарз"
+    },
+    "biznes": {
+      "savdo_daromadi": "Савдо даромади",
+      "doimiy_xarajat": "Доимий харажат",
+      "ish_haqi": "Иш ҳақи",
+      "soliq": "Солиқ ва мажбурий тўлов",
+      "tovar": "Товар ва хомашё",
+      "logistika": "Логистика",
+      "marketing": "Маркетинг",
+      "moliyaviy": "Молиявий",
+      "investitsiya": "Инвестиция"
+    }
+  },
+  "kontur": {
+    "shaxsiy": "Шахсий",
+    "biznes": "Бизнес"
+  },
+  "tur": {
+    "kirim": "Кирим",
+    "chiqim": "Чиқим",
+    "kochirish": "Кўчириш",
+    "investitsiya": "Инвестиция"
+  },
+  "yozuv": {
+    "summa": "Сумма",
+    "tur": "Тур",
+    "kategoriya": "Категория",
+    "hisob": "Ҳисоб",
+    "sana": "Сана",
+    "kontragent": "Контрагент",
+    "izoh": "Изоҳ",
+    "saqlash": "Сақлаш",
+    "yangi": "Янги ёзув",
+    "tahrirlash": "Ёзувни таҳрирлаш",
+    "ochirish": "Ўчириш",
+    "ochirilsinmi": "Ёзув ўчирилсинми?",
+    "kategoriya_tanlang": "Категорияни танланг",
+    "hisob_tanlang": "Ҳисобни танланг",
+    "tanlanmagan": "Танланмаган",
+    "qidiruv": "Қидириш",
+    "songgi": "Сўнгги ёзувлар",
+    "bosh": "Ҳали ёзув йўқ",
+    "summa_kerak": "Сумма 0 дан катта бўлиши керак",
+    "hisob_kerak": "Ҳисобни танланг"
+  },
+  "umumiy": {
+    "bekor": "Бекор",
+    "ha": "Ҳа",
+    "yoq": "Йўқ",
+    "yopish": "Ёпиш"
+  },
+  "davr": {
+    "buOy": "Бу ой",
+    "otganOy": "Ўтган ой",
+    "ucOy": "3 ой"
+  },
+  "son": {
+    "mln": "млн",
+    "mlrd": "млрд"
+  },
+  "bosh": {
+    "qoldiq": "Умумий қолдиқ",
+    "sofFoyda": "Соф фойда",
+    "limit": "Ойлик лимит",
+    "limitBelgilanmagan": "Лимит белгиланмаган",
+    "hisoblar": "Ҳисоблар",
+    "yashir": "Яшириш",
+    "korsat": "Кўрсатиш",
+    "taqqoslash": "ўтган даврга нисбатан"
+  },
+  "qarz": {
+    "menQarzdor": "Мен қарздорман",
+    "mengaQarzdor": "Менга қарздор",
+    "buOyFoizga": "Бу ой фоизга кетади",
+    "jami": "Жами",
+    "yangi": "Янги қарз",
+    "kreditor": "Кредитор / мижоз",
+    "stavka": "Йиллик фоиз ставкаси (%)",
+    "muddat": "Муддат (ой)",
+    "tolovTuri": "Тўлов тури",
+    "qoldiq": "Қолдиқ",
+    "oylikFoiz": "Ойлик фоиз",
+    "tolovYoz": "Тўлов ёзиш",
+    "tolovSummasi": "Тўлов суммаси",
+    "ertaYopish": "Эрта ёпиш калкулятори",
+    "oy": "ой",
+    "jamiFoiz": "Жами фоиз",
+    "tejaladi": "Тежалади",
+    "ogohlantirish": "Бу тўлов билан қарз камаймайди",
+    "tolovlar": "Тўловлар",
+    "yopilgan": "Ёпилган",
+    "bosh": "Қарз йўқ",
+    "annuitet": "Аннуитет",
+    "differensial": "Дифференциал",
+    "muddatsiz": "Муддатсиз"
+  },
+  "fond": {
+    "yangi": "Янги фонд",
+    "nom": "Ном",
+    "maqsad": "Мақсад суммаси",
+    "oylikReja": "Ойлик режа",
+    "yigilgan": "Йиғилган",
+    "qolgan": "Қолган",
+    "maqsadSana": "Мақсадга етиш санаси",
+    "qoshish": "Қўшиш",
+    "olish": "Олиш",
+    "harakatlar": "Ҳаракатлар",
+    "bosh": "Фонд йўқ",
+    "shablonlar": "Тайёр шаблонлар",
+    "tavsiya": "Тавсия этилган",
+    "template": {
+      "umra": "Умра фонди",
+      "zaxira": "Захира жамғарма",
+      "yordam": "Ёрдам фонди",
+      "soliq": "Солиқ захираси",
+      "rivojlanish": "Ривожланиш фонди"
+    }
+  },
+  "hisobot": {
+    "kirimChiqim": "Кирим-чиқим китоби",
+    "kategoriyaHisoboti": "Категория бўйича",
+    "kontragentHisoboti": "Контрагент бўйича",
+    "toliqEksport": "Тўлиқ экспорт",
+    "toliqIzoh": "Барча маълумот, чекловсиз",
+    "zaxira": "Захира нусха",
+    "saqlash": "Сақлаш",
+    "tiklash": "Тиклаш",
+    "ustun": {
+      "sana": "Сана",
+      "tur": "Тур",
+      "kategoriya": "Категория",
+      "hisob": "Ҳисоб",
+      "kontragent": "Контрагент",
+      "summa": "Сумма",
+      "izoh": "Изоҳ",
+      "jami": "Жами",
+      "soni": "Сони",
+      "kirim": "Кирим",
+      "chiqim": "Чиқим",
+      "balans": "Баланс"
+    }
+  },
+  "tez": {
+    "sarlavha": "Тез киритиш",
+    "joyholder": "Масалан: 400 минг бензин",
+    "aniqlanmadi": "Аниқланмади — қуйида тўлдиринг",
+    "tasdiqlash": "Тасдиқлаш",
+    "toliq": "Ёки тўлиқ форма"
+  },
+  "onboarding": {
+    "keyingi": "Кейинги",
+    "boshlash": "Бошлаш",
+    "otkazish": "Ўтказиб юбориш",
+    "s1_sarlavha": "Икки пул, бир илова",
+    "s1_matn": "Шахсий ва бизнес пули ҳар доим алоҳида. Ҳеч қачон аралашмайди.",
+    "s2_sarlavha": "Тез ёзув",
+    "s2_matn": "\"400 минг бензин\" деб ёзинг — илова ўзи таклиф қилади, сиз тасдиқлайсиз.",
+    "s3_sarlavha": "Маълумот сизники",
+    "s3_matn": "Ҳамма нарса қурилмангизда. Реклама йўқ. Истаган вақтда тўлиқ экспорт қиласиз."
+  },
+  "qulf": {
+    "kiriting": "PIN киритинг",
+    "ornating": "PIN ўрнатинг (4 рақам)",
+    "takrorlang": "PIN'ни такрорланг",
+    "xato": "Нотўғри PIN",
+    "mos_emas": "PIN мос келмади",
+    "biometrik": "Биометрика билан очиш",
+    "ochish": "Очиш"
+  },
+  "offline": {
+    "matn": "Интернет йўқ — офлайн режим"
+  }
+}

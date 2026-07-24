@@ -1,0 +1,217 @@
+{
+  "app": {
+    "name": "Smarta"
+  },
+  "tabs": {
+    "bosh": "Bosh",
+    "yozuv": "Yozuv",
+    "qarz": "Qarz",
+    "fond": "Fond",
+    "hisobot": "Hisobot"
+  },
+  "til": {
+    "sarlavha": "Til",
+    "uz_lat": "O'zbekcha",
+    "uz_cyr": "Ўзбекча",
+    "ru": "Русский"
+  },
+  "ekran": {
+    "bosh": "Bosh ekran",
+    "yozuv": "Yozuv kiritish",
+    "qarz": "Qarz va kredit",
+    "fond": "Maqsadli fondlar",
+    "hisobot": "Hisobotlar",
+    "tayyor": "Bu ekran keyingi sprintda to'ldiriladi"
+  },
+  "guruh": {
+    "turmush": "Turmush",
+    "ijtimoiy": "Ijtimoiy",
+    "moliya": "Moliya",
+    "daromad": "Daromad",
+    "xarajat": "Xarajat",
+    "majburiyat": "Majburiyat"
+  },
+  "kategoriya": {
+    "shaxsiy": {
+      "uy_rozgor": "Uy-ro'zg'or",
+      "transport": "Transport",
+      "soglik": "Sog'liq",
+      "talim": "Ta'lim",
+      "oila": "Oila",
+      "marosim": "Marosim va mehmon",
+      "yordam": "Yordam va sadaqa",
+      "jamgarma": "Jamg'arma",
+      "qarz": "Qarz"
+    },
+    "biznes": {
+      "savdo_daromadi": "Savdo daromadi",
+      "doimiy_xarajat": "Doimiy xarajat",
+      "ish_haqi": "Ish haqi",
+      "soliq": "Soliq va majburiy to'lov",
+      "tovar": "Tovar va xomashyo",
+      "logistika": "Logistika",
+      "marketing": "Marketing",
+      "moliyaviy": "Moliyaviy",
+      "investitsiya": "Investitsiya"
+    }
+  },
+  "kontur": {
+    "shaxsiy": "Shaxsiy",
+    "biznes": "Biznes"
+  },
+  "tur": {
+    "kirim": "Kirim",
+    "chiqim": "Chiqim",
+    "kochirish": "Ko'chirish",
+    "investitsiya": "Investitsiya"
+  },
+  "yozuv": {
+    "summa": "Summa",
+    "tur": "Tur",
+    "kategoriya": "Kategoriya",
+    "hisob": "Hisob",
+    "sana": "Sana",
+    "kontragent": "Kontragent",
+    "izoh": "Izoh",
+    "saqlash": "Saqlash",
+    "yangi": "Yangi yozuv",
+    "tahrirlash": "Yozuvni tahrirlash",
+    "ochirish": "O'chirish",
+    "ochirilsinmi": "Yozuv o'chirilsinmi?",
+    "kategoriya_tanlang": "Kategoriyani tanlang",
+    "hisob_tanlang": "Hisobni tanlang",
+    "tanlanmagan": "Tanlanmagan",
+    "qidiruv": "Qidirish",
+    "songgi": "So'nggi yozuvlar",
+    "bosh": "Hali yozuv yo'q",
+    "summa_kerak": "Summa 0 dan katta bo'lishi kerak",
+    "hisob_kerak": "Hisobni tanlang"
+  },
+  "umumiy": {
+    "bekor": "Bekor",
+    "ha": "Ha",
+    "yoq": "Yo'q",
+    "yopish": "Yopish"
+  },
+  "davr": {
+    "buOy": "Bu oy",
+    "otganOy": "O'tgan oy",
+    "ucOy": "3 oy"
+  },
+  "son": {
+    "mln": "mln",
+    "mlrd": "mlrd"
+  },
+  "bosh": {
+    "qoldiq": "Umumiy qoldiq",
+    "sofFoyda": "Sof foyda",
+    "limit": "Oylik limit",
+    "limitBelgilanmagan": "Limit belgilanmagan",
+    "hisoblar": "Hisoblar",
+    "yashir": "Yashirish",
+    "korsat": "Ko'rsatish",
+    "taqqoslash": "o'tgan davrga nisbatan"
+  },
+  "qarz": {
+    "menQarzdor": "Men qarzdorman",
+    "mengaQarzdor": "Menga qarzdor",
+    "buOyFoizga": "Bu oy foizga ketadi",
+    "jami": "Jami",
+    "yangi": "Yangi qarz",
+    "kreditor": "Kreditor / mijoz",
+    "stavka": "Yillik foiz stavkasi (%)",
+    "muddat": "Muddat (oy)",
+    "tolovTuri": "To'lov turi",
+    "qoldiq": "Qoldiq",
+    "oylikFoiz": "Oylik foiz",
+    "tolovYoz": "To'lov yozish",
+    "tolovSummasi": "To'lov summasi",
+    "ertaYopish": "Erta yopish kalkulyatori",
+    "oy": "oy",
+    "jamiFoiz": "Jami foiz",
+    "tejaladi": "Tejaladi",
+    "ogohlantirish": "Bu to'lov bilan qarz kamaymaydi",
+    "tolovlar": "To'lovlar",
+    "yopilgan": "Yopilgan",
+    "bosh": "Qarz yo'q",
+    "annuitet": "Annuitet",
+    "differensial": "Differensial",
+    "muddatsiz": "Muddatsiz"
+  },
+  "fond": {
+    "yangi": "Yangi fond",
+    "nom": "Nom",
+    "maqsad": "Maqsad summasi",
+    "oylikReja": "Oylik reja",
+    "yigilgan": "Yig'ilgan",
+    "qolgan": "Qolgan",
+    "maqsadSana": "Maqsadga yetish sanasi",
+    "qoshish": "Qo'shish",
+    "olish": "Olish",
+    "harakatlar": "Harakatlar",
+    "bosh": "Fond yo'q",
+    "shablonlar": "Tayyor shablonlar",
+    "tavsiya": "Tavsiya etilgan",
+    "template": {
+      "umra": "Umra fondi",
+      "zaxira": "Zaxira jamg'arma",
+      "yordam": "Yordam fondi",
+      "soliq": "Soliq zaxirasi",
+      "rivojlanish": "Rivojlanish fondi"
+    }
+  },
+  "hisobot": {
+    "kirimChiqim": "Kirim-chiqim kitobi",
+    "kategoriyaHisoboti": "Kategoriya bo'yicha",
+    "kontragentHisoboti": "Kontragent bo'yicha",
+    "toliqEksport": "To'liq eksport",
+    "toliqIzoh": "Barcha ma'lumot, cheklovsiz",
+    "zaxira": "Zaxira nusxa",
+    "saqlash": "Saqlash",
+    "tiklash": "Tiklash",
+    "ustun": {
+      "sana": "Sana",
+      "tur": "Tur",
+      "kategoriya": "Kategoriya",
+      "hisob": "Hisob",
+      "kontragent": "Kontragent",
+      "summa": "Summa",
+      "izoh": "Izoh",
+      "jami": "Jami",
+      "soni": "Soni",
+      "kirim": "Kirim",
+      "chiqim": "Chiqim",
+      "balans": "Balans"
+    }
+  },
+  "tez": {
+    "sarlavha": "Tez kiritish",
+    "joyholder": "Masalan: 400 ming benzin",
+    "aniqlanmadi": "Aniqlanmadi — quyida to'ldiring",
+    "tasdiqlash": "Tasdiqlash",
+    "toliq": "Yoki to'liq forma"
+  },
+  "onboarding": {
+    "keyingi": "Keyingi",
+    "boshlash": "Boshlash",
+    "otkazish": "O'tkazib yuborish",
+    "s1_sarlavha": "Ikki pul, bir ilova",
+    "s1_matn": "Shaxsiy va biznes puli har doim alohida. Hech qachon aralashmaydi.",
+    "s2_sarlavha": "Tez yozuv",
+    "s2_matn": "\"400 ming benzin\" deb yozing — ilova o'zi taklif qiladi, siz tasdiqlaysiz.",
+    "s3_sarlavha": "Ma'lumot sizniki",
+    "s3_matn": "Hamma narsa qurilmangizda. Reklama yo'q. Istagan vaqtda to'liq eksport qilasiz."
+  },
+  "qulf": {
+    "kiriting": "PIN kiriting",
+    "ornating": "PIN o'rnating (4 raqam)",
+    "takrorlang": "PIN'ni takrorlang",
+    "xato": "Noto'g'ri PIN",
+    "mos_emas": "PIN mos kelmadi",
+    "biometrik": "Biometrika bilan ochish",
+    "ochish": "Ochish"
+  },
+  "offline": {
+    "matn": "Internet yo'q — offline rejim"
+  }
+}
