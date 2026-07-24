@@ -9,8 +9,9 @@ import { createTransaction } from '../repositories/transactions';
 import { useAccent } from '../store/useAccent';
 import { useOrgangan } from '../store/useOrgangan';
 import { useSettings } from '../store/useSettings';
-import { colors, fonts, radius, spacing } from '../theme/tokens';
+import { colors, fonts, radius, soya, spacing } from '../theme/tokens';
 import { formatKun } from '../utils/date';
+import { muvaffaqiyat } from '../utils/haptik';
 import { kategoriyaNomi } from '../utils/labels';
 import PulMatn from './PulMatn';
 import TanlashModal, { type TanlovElement } from './TanlashModal';
@@ -65,6 +66,7 @@ export default function TezKiritish({ onSaved }: Props) {
     if (tanlanganId && kalit) {
       orgat(contour, kalit, tanlanganId);
     }
+    muvaffaqiyat();
     setMatn('');
     setOverride(null);
     onSaved();
@@ -141,9 +143,10 @@ const styles = StyleSheet.create({
   karta: {
     margin: spacing.md,
     padding: spacing.md,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.oq,
     borderRadius: radius.md,
     gap: spacing.sm,
+    ...soya,
   },
   sarlavha: { fontFamily: fonts.sarlavha, fontSize: 15, color: colors.siyoh },
   kirit: {

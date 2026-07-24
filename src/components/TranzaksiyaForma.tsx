@@ -1,5 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Platform, Pressable, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+} from 'react-native';
 import DateTimePicker, { type DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import { useTranslation } from 'react-i18next';
 
@@ -14,6 +22,7 @@ import { useSettings } from '../store/useSettings';
 import { colors, fonts, radius, spacing } from '../theme/tokens';
 import { formatKun, kunBoshi } from '../utils/date';
 import { formatSom, parseSomInput } from '../utils/format';
+import { muvaffaqiyat } from '../utils/haptik';
 import { kategoriyaNomi } from '../utils/labels';
 import SegmentTanlagich from './SegmentTanlagich';
 import TanlashModal, { type TanlovElement } from './TanlashModal';
@@ -109,110 +118,122 @@ export default function TranzaksiyaForma({ mavjud, onSaved }: Props) {
     } else {
       await createTransaction(db, contour, data);
     }
+    muvaffaqiyat();
     onSaved();
   }
 
   return (
-    <ScrollView style={styles.konteyner} contentContainerStyle={styles.ichki}>
-      <Text style={styles.yorliq}>{t('yozuv.tur')}</Text>
-      <SegmentTanlagich
-        accent={accent}
-        value={tur}
-        onChange={(v) => setTur(v)}
-        options={TURLAR.map((x) => ({ value: x, label: t(`tur.${x}`) }))}
-      />
+    <KeyboardAvoidingView
+      style={styles.konteyner}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      <ScrollView contentContainerStyle={styles.ichki} keyboardShouldPersistTaps="handled">
+        <Text style={styles.yorliq}>{t('yozuv.tur')}</Text>
+        <SegmentTanlagich
+          accent={accent}
+          value={tur}
+          onChange={(v) => setTur(v)}
+          options={TURLAR.map((x) => ({ value: x, label: t(`tur.${x}`) }))}
+        />
 
-      <Text style={styles.yorliq}>{t('yozuv.summa')}</Text>
-      <TextInput
-        style={styles.summa}
-        keyboardType="number-pad"
-        placeholder="0"
-        placeholderTextColor={colors.kul}
-        value={summa}
-        onChangeText={(x) => setSumma(formatSom(parseSomInput(x)))}
-      />
+        <Text style={styles.yorliq}>{t('yozuv.summa')}</Text>
+        <TextInput
+          style={styles.summa}
+          keyboardType="number-pad"
+          placeholder="0"
+          placeholderTextColor={colors.kul}
+          value={summa}
+          onChangeText={(x) => setSumma(formatSom(parseSomInput(x)))}
+        />
 
-      {tur !== 'kochirish' ? (
-        <>
-          <Text style={styles.yorliq}>{t('yozuv.kategoriya')}</Text>
-          <Pressable
-            accessibilityRole="button"
-            style={styles.tanlov}
-            onPress={() => setModal('kategoriya')}
-          >
-            <Text style={styles.tanlovMatn}>
-              {kategoriyaNom ? kategoriyaNomi(kategoriyaNom, t) : t('yozuv.kategoriya_tanlang')}
-            </Text>
-          </Pressable>
-        </>
-      ) : null}
+        {tur !== 'kochirish' ? (
+          <>
+            <Text style={styles.yorliq}>{t('yozuv.kategoriya')}</Text>
+            <Pressable
+              accessibilityRole="button"
+              style={styles.tanlov}
+              onPress={() => setModal('kategoriya')}
+            >
+              <Text style={styles.tanlovMatn}>
+                {kategoriyaNom ? kategoriyaNomi(kategoriyaNom, t) : t('yozuv.kategoriya_tanlang')}
+              </Text>
+            </Pressable>
+          </>
+        ) : null}
 
-      <Text style={styles.yorliq}>{t('yozuv.hisob')}</Text>
-      <Pressable accessibilityRole="button" style={styles.tanlov} onPress={() => setModal('hisob')}>
-        <Text style={styles.tanlovMatn}>{hisobNom ? hisobNom.name : t('yozuv.hisob_tanlang')}</Text>
-      </Pressable>
+        <Text style={styles.yorliq}>{t('yozuv.hisob')}</Text>
+        <Pressable
+          accessibilityRole="button"
+          style={styles.tanlov}
+          onPress={() => setModal('hisob')}
+        >
+          <Text style={styles.tanlovMatn}>
+            {hisobNom ? hisobNom.name : t('yozuv.hisob_tanlang')}
+          </Text>
+        </Pressable>
 
-      <Text style={styles.yorliq}>{t('yozuv.sana')}</Text>
-      <Pressable
-        accessibilityRole="button"
-        style={styles.tanlov}
-        onPress={() => setSanaOchiq(true)}
-      >
-        <Text style={styles.tanlovMatn}>{formatKun(sana)}</Text>
-      </Pressable>
-      {sanaOchiq ? (
-        <DateTimePicker value={new Date(sana)} mode="date" onChange={sanaOzgardi} />
-      ) : null}
+        <Text style={styles.yorliq}>{t('yozuv.sana')}</Text>
+        <Pressable
+          accessibilityRole="button"
+          style={styles.tanlov}
+          onPress={() => setSanaOchiq(true)}
+        >
+          <Text style={styles.tanlovMatn}>{formatKun(sana)}</Text>
+        </Pressable>
+        {sanaOchiq ? (
+          <DateTimePicker value={new Date(sana)} mode="date" onChange={sanaOzgardi} />
+        ) : null}
 
-      <Text style={styles.yorliq}>{t('yozuv.kontragent')}</Text>
-      <TextInput
-        style={styles.matnMaydon}
-        value={kontragent}
-        onChangeText={setKontragent}
-        placeholderTextColor={colors.kul}
-      />
+        <Text style={styles.yorliq}>{t('yozuv.kontragent')}</Text>
+        <TextInput
+          style={styles.matnMaydon}
+          value={kontragent}
+          onChangeText={setKontragent}
+          placeholderTextColor={colors.kul}
+        />
 
-      <Text style={styles.yorliq}>{t('yozuv.izoh')}</Text>
-      <TextInput
-        style={styles.matnMaydon}
-        value={izoh}
-        onChangeText={setIzoh}
-        placeholderTextColor={colors.kul}
-      />
+        <Text style={styles.yorliq}>{t('yozuv.izoh')}</Text>
+        <TextInput
+          style={styles.matnMaydon}
+          value={izoh}
+          onChangeText={setIzoh}
+          placeholderTextColor={colors.kul}
+        />
 
-      {xato ? <Text style={styles.xato}>{xato}</Text> : null}
+        {xato ? <Text style={styles.xato}>{xato}</Text> : null}
 
-      <Pressable
-        accessibilityRole="button"
-        style={[styles.saqla, { backgroundColor: accent }]}
-        onPress={() => void saqla()}
-      >
-        <Text style={styles.saqlaMatn}>{t('yozuv.saqlash')}</Text>
-      </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          style={[styles.saqla, { backgroundColor: accent }]}
+          onPress={() => void saqla()}
+        >
+          <Text style={styles.saqlaMatn}>{t('yozuv.saqlash')}</Text>
+        </Pressable>
 
-      <TanlashModal
-        visible={modal === 'kategoriya'}
-        sarlavha={t('yozuv.kategoriya_tanlang')}
-        elementlar={kategoriyaElementlar}
-        accent={accent}
-        onClose={() => setModal(null)}
-        onSelect={(id) => {
-          setKategoriyaId(id);
-          setModal(null);
-        }}
-      />
-      <TanlashModal
-        visible={modal === 'hisob'}
-        sarlavha={t('yozuv.hisob_tanlang')}
-        elementlar={hisobElementlar}
-        accent={accent}
-        onClose={() => setModal(null)}
-        onSelect={(id) => {
-          setHisobId(id);
-          setModal(null);
-        }}
-      />
-    </ScrollView>
+        <TanlashModal
+          visible={modal === 'kategoriya'}
+          sarlavha={t('yozuv.kategoriya_tanlang')}
+          elementlar={kategoriyaElementlar}
+          accent={accent}
+          onClose={() => setModal(null)}
+          onSelect={(id) => {
+            setKategoriyaId(id);
+            setModal(null);
+          }}
+        />
+        <TanlashModal
+          visible={modal === 'hisob'}
+          sarlavha={t('yozuv.hisob_tanlang')}
+          elementlar={hisobElementlar}
+          accent={accent}
+          onClose={() => setModal(null)}
+          onSelect={(id) => {
+            setHisobId(id);
+            setModal(null);
+          }}
+        />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 

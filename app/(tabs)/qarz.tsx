@@ -3,6 +3,7 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
+import BoshHolat from '../../src/components/BoshHolat';
 import KonturTanlagich from '../../src/components/KonturTanlagich';
 import PulMatn from '../../src/components/PulMatn';
 import QarzSatri from '../../src/components/QarzSatri';
@@ -11,7 +12,7 @@ import { useDebts } from '../../src/db/useDebts';
 import type { DebtDirection } from '../../src/domain/types';
 import { useAccent } from '../../src/store/useAccent';
 import { useSettings } from '../../src/store/useSettings';
-import { colors, fonts, radius, spacing } from '../../src/theme/tokens';
+import { colors, fonts, radius, soya, spacing } from '../../src/theme/tokens';
 
 // Qarz moduli: bosh ko'rsatkich (bu oy foizga ketadi), yo'nalish bo'yicha ro'yxat.
 export default function QarzEkran() {
@@ -35,7 +36,7 @@ export default function QarzEkran() {
       {/* Bosh ko'rsatkich — eng ko'zga tashlanadigan joyda, qizil rangda. */}
       <View style={styles.foizKarta}>
         <Text style={styles.foizYorliq}>{t('qarz.buOyFoizga')}</Text>
-        <PulMatn amount={buOyFoizga} yashirin={qoldiqYashirin} qisqa style={styles.foizSumma} />
+        <PulMatn amount={buOyFoizga} yashirin={qoldiqYashirin} som style={styles.foizSumma} />
       </View>
 
       <View style={styles.segment}>
@@ -52,7 +53,7 @@ export default function QarzEkran() {
 
       <View style={styles.jamiQator}>
         <Text style={styles.jamiYorliq}>{t('qarz.jami')}</Text>
-        <PulMatn amount={jami} yashirin={qoldiqYashirin} qisqa style={styles.jamiSumma} />
+        <PulMatn amount={jami} yashirin={qoldiqYashirin} som style={styles.jamiSumma} />
       </View>
 
       <Pressable
@@ -78,7 +79,7 @@ export default function QarzEkran() {
           onPress={(id) => router.push(`/qarz/${id}`)}
         />
       )}
-      ListEmptyComponent={<Text style={styles.bosh}>{t('qarz.bosh')}</Text>}
+      ListEmptyComponent={<BoshHolat ikon="cash-outline" matn={t('qarz.bosh')} />}
     />
   );
 }
@@ -91,8 +92,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.lg,
     backgroundColor: '#FBECEA',
     borderWidth: 1,
-    borderColor: colors.qizil,
+    borderColor: '#EBD3CF',
     gap: spacing.xs,
+    ...soya,
   },
   foizYorliq: { fontFamily: fonts.matn, fontSize: 14, color: colors.qizil },
   foizSumma: { fontSize: 30, color: colors.qizil },

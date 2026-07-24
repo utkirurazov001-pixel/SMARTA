@@ -12,6 +12,7 @@ import '../src/i18n';
 import { DbProvider } from '../src/db/DbProvider';
 import IlovaDarvoza from '../src/components/IlovaDarvoza';
 import OfflineIndikator from '../src/components/OfflineIndikator';
+import { colors, fonts } from '../src/theme/tokens';
 
 export default function RootLayout() {
   // Brend shriftlari token nomlariga moslab yuklanadi (CLAUDE.md 5-bo'lim).
@@ -32,7 +33,16 @@ export default function RootLayout() {
         <IlovaDarvoza>
           <DbProvider>
             <OfflineIndikator />
-            <Stack screenOptions={{ headerShown: false }}>
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                headerStyle: { backgroundColor: colors.qogoz },
+                headerShadowVisible: false,
+                headerTintColor: colors.siyoh,
+                headerTitleStyle: { fontFamily: fonts.sarlavha, fontSize: 18, color: colors.siyoh },
+                contentStyle: { backgroundColor: colors.qogoz },
+              }}
+            >
               <Stack.Screen name="(tabs)" />
               <Stack.Screen name="tranzaksiya/[id]" options={{ presentation: 'modal' }} />
             </Stack>

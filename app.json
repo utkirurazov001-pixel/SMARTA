@@ -8,6 +8,12 @@
     "icon": "./assets/icon.png",
     "scheme": "smarta",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#F7F9F9",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F9F9"
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,

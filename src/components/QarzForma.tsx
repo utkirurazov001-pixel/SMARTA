@@ -9,6 +9,7 @@ import { useAccent } from '../store/useAccent';
 import { useSettings } from '../store/useSettings';
 import { colors, fonts, radius, spacing } from '../theme/tokens';
 import { formatSom, parseSomInput } from '../utils/format';
+import { muvaffaqiyat } from '../utils/haptik';
 import SegmentTanlagich from './SegmentTanlagich';
 
 interface Props {
@@ -47,6 +48,7 @@ export default function QarzForma({ onSaved }: Props) {
       termMonths: muddat ? parseInt(muddat, 10) : null,
       paymentType: tolovTuri,
     });
+    muvaffaqiyat();
     onSaved();
   }
 

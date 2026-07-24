@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import { colors, fonts, radius, spacing } from '../theme/tokens';
+import { colors, fonts, radius, soya, spacing } from '../theme/tokens';
 import PulMatn from './PulMatn';
 
 interface Props {
@@ -24,6 +24,7 @@ export default function StatKarta({ yorliq, qiymat, rang, qoldiqYashirin, foiz }
       <PulMatn
         amount={qiymat}
         yashirin={qoldiqYashirin}
+        som
         style={[styles.qiymat, { color: rangQiymat }]}
       />
       {foiz !== undefined && foiz !== null ? (
@@ -40,8 +41,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: spacing.md,
     borderRadius: radius.md,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.oq,
     gap: spacing.xs,
+    ...soya,
   },
   yorliq: { fontFamily: fonts.matn, fontSize: 13, color: colors.kul },
   qiymat: { fontSize: 18 },

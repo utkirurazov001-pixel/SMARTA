@@ -2,6 +2,7 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
+import BoshHolat from '../../src/components/BoshHolat';
 import FondSatri from '../../src/components/FondSatri';
 import KonturTanlagich from '../../src/components/KonturTanlagich';
 import { useFunds } from '../../src/db/useFunds';
@@ -60,7 +61,7 @@ export default function FondEkran() {
           onPress={(id) => router.push(`/fond/${id}`)}
         />
       )}
-      ListEmptyComponent={<Text style={styles.bosh}>{t('fond.bosh')}</Text>}
+      ListEmptyComponent={<BoshHolat ikon="flag-outline" matn={t('fond.bosh')} />}
     />
   );
 }

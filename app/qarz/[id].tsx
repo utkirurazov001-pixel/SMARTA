@@ -18,6 +18,7 @@ import { useSettings } from '../../src/store/useSettings';
 import { colors, fonts, radius, spacing } from '../../src/theme/tokens';
 import { formatKun, kunBoshi } from '../../src/utils/date';
 import { formatSom, parseSomInput } from '../../src/utils/format';
+import { muvaffaqiyat } from '../../src/utils/haptik';
 
 export default function QarzDetalEkran() {
   const { t } = useTranslation();
@@ -81,6 +82,7 @@ export default function QarzDetalEkran() {
       tolov: kiritilgan,
       sana: kunBoshi(new Date()),
     });
+    muvaffaqiyat();
     setSumma('');
     await yukla();
   }

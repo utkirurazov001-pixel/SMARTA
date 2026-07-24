@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { FondKorinish } from '../db/useFunds';
 import { fondProgress } from '../domain/fond';
 import { useAccent } from '../store/useAccent';
-import { colors, fonts, radius, spacing } from '../theme/tokens';
+import { colors, fonts, radius, soya, spacing } from '../theme/tokens';
 import PulMatn from './PulMatn';
 
 interface Props {
@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
     marginHorizontal: spacing.md,
     marginBottom: spacing.sm,
     padding: spacing.md,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.oq,
     borderRadius: radius.md,
     gap: spacing.sm,
+    ...soya,
   },
   tepa: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   nom: { fontFamily: fonts.matn, fontSize: 16, color: colors.siyoh },
