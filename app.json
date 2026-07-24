@@ -2,6 +2,7 @@
   "expo": {
     "name": "Smarta",
     "slug": "smarta",
+    "owner": "Elgataxi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -34,6 +35,11 @@
           "faceIDPermission": "Ilovani ochish uchun Face ID ishlatiladi."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a83bbb9e-7c96-4084-a2cb-62773236babe"
+      }
+    }
   }
 }
