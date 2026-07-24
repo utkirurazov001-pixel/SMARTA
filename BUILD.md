@@ -33,14 +33,35 @@ Bu usul sinash uchun yetarli. Ba'zi native funksiyalar (biometrika) faqat haqiqi
 
 Bepul Expo hisobi kerak (expo.dev). APK bulutda yig'iladi.
 
+> ⚠️ **Windows (CMD/PowerShell) uchun muhim:** buyruqlardan keyin `#` izoh yozmang.
+> Windows'da `#` izoh belgisi EMAS — u argument deb o'qiladi va xato beradi
+> (`Unexpected arguments: #, ...`). Har bir buyruqni **alohida, izohsiz** yozing.
+
+Eas-cli o'rnatish (bir marta):
+
 ```bash
-npm install -g eas-cli        # yoki har safar: npx eas-cli@latest
-eas login                     # Expo hisobiga kirish (bepul)
+npm install -g eas-cli
+```
+
+Expo hisobiga kirish (bepul — email/parol so'raydi):
+
+```bash
+eas login
+```
+
+Android APK build:
+
+```bash
 eas build -p android --profile preview
 ```
 
-- Birinchi build loyihani Expo'da ro'yxatdan o'tkazadi (`app.json`ga `projectId` yoziladi) — tasdiqlang.
-- Yig'ilgach terminalda **APK yuklab olish havolasi** chiqadi. Telefonga yuklab, o'rnating (Android'da "Noma'lum manbalar"ga ruxsat kerak).
+Birinchi build paytidagi savollarga javob:
+
+- `Would you like to create an EAS project?` → **Y**
+- `Generate a new Android Keystore?` → **Y**
+
+Yig'ilgach terminalda **APK yuklab olish havolasi** chiqadi. Telefonga yuklab, o'rnating
+(Android'da "Noma'lum manbalar"ga ruxsat kerak bo'lishi mumkin).
 
 `preview` profili aynan APK beradi (`eas.json` da `buildType: apk`).
 
@@ -73,11 +94,16 @@ Yig'ilgan `.app` faylni yuklab, Simulyatorga tashlang (drag-and-drop).
 
 ## 4. Lokal build (ixtiyoriy)
 
-Agar SDK'lar o'rnatilgan bo'lsa:
+Agar SDK'lar o'rnatilgan bo'lsa (izohsiz yozing):
 
 ```bash
-npx expo run:android    # Android SDK kerak
-npx expo run:ios        # Mac + Xcode kerak
+npx expo run:android
+```
+
+(Android SDK kerak.) iOS uchun (Mac + Xcode kerak):
+
+```bash
+npx expo run:ios
 ```
 
 ---
@@ -85,7 +111,7 @@ npx expo run:ios        # Mac + Xcode kerak
 ## Sifat tekshiruvi (build oldidan)
 
 ```bash
-npm run typecheck   # tsc --noEmit
+npm run typecheck
 npm run lint
 npm test
 ```
