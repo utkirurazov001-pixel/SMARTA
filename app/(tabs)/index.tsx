@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
+import BoshHolat from '../../src/components/BoshHolat';
 import DavrTanlagich from '../../src/components/DavrTanlagich';
 import HisobRoyxati from '../../src/components/HisobRoyxati';
 import KonturTanlagich from '../../src/components/KonturTanlagich';
@@ -16,7 +18,7 @@ import { umumiyQoldiq } from '../../src/domain/balans';
 import { davrOraliq, foizOzgarish, oraliqIchida, type DavrTur } from '../../src/domain/davr';
 import { kirimYigindisi, sofFoyda, xarajatYigindisi } from '../../src/domain/hisob';
 import { useSettings } from '../../src/store/useSettings';
-import { colors, fonts, spacing } from '../../src/theme/tokens';
+import { colors, fonts, radius, spacing } from '../../src/theme/tokens';
 import { kategoriyaNomi } from '../../src/utils/labels';
 
 // Bosh ekran: qoldiq, hisoblar, davr statistikasi, so'nggi yozuvlar va qidiruv.
@@ -105,13 +107,16 @@ export default function BoshEkran() {
         transactions={transactions}
         qoldiqYashirin={qoldiqYashirin}
       />
-      <TextInput
-        style={styles.qidiruv}
-        placeholder={t('yozuv.qidiruv')}
-        placeholderTextColor={colors.kul}
-        value={qidiruv}
-        onChangeText={setQidiruv}
-      />
+      <View style={styles.qidiruv}>
+        <Ionicons name="search-outline" size={18} color={colors.kul} />
+        <TextInput
+          style={styles.qidiruvMaydon}
+          placeholder={t('yozuv.qidiruv')}
+          placeholderTextColor={colors.kul}
+          value={qidiruv}
+          onChangeText={setQidiruv}
+        />
+      </View>
       <Text style={styles.songgi}>{t('yozuv.songgi')}</Text>
     </View>
   );
@@ -132,7 +137,7 @@ export default function BoshEkran() {
           onPress={(id) => router.push(`/tranzaksiya/${id}`)}
         />
       )}
-      ListEmptyComponent={<Text style={styles.bosh}>{t('yozuv.bosh')}</Text>}
+      ListEmptyComponent={<BoshHolat ikon="receipt-outline" matn={t('yozuv.bosh')} />}
       ListFooterComponent={
         <View style={styles.futer}>
           <TilTanlagich />
@@ -147,14 +152,22 @@ const styles = StyleSheet.create({
   statQator: { flexDirection: 'row', gap: spacing.sm, paddingHorizontal: spacing.md },
   sof: { paddingHorizontal: spacing.md, paddingTop: spacing.sm },
   qidiruv: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
     marginHorizontal: spacing.md,
     marginTop: spacing.sm,
     borderWidth: 1,
-    borderColor: colors.kul,
-    borderRadius: 12,
+    borderColor: colors.chegara,
+    borderRadius: radius.md,
+    backgroundColor: colors.oq,
     paddingHorizontal: spacing.md,
+  },
+  qidiruvMaydon: {
+    flex: 1,
     paddingVertical: spacing.sm,
     fontFamily: fonts.matn,
+    fontSize: 15,
     color: colors.siyoh,
   },
   songgi: {
@@ -164,13 +177,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingTop: spacing.md,
     paddingBottom: spacing.xs,
-  },
-  bosh: {
-    fontFamily: fonts.matn,
-    fontSize: 14,
-    color: colors.kul,
-    textAlign: 'center',
-    padding: spacing.xl,
   },
   futer: { paddingVertical: spacing.lg, alignItems: 'center' },
 });

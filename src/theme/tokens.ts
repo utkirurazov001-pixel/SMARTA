@@ -2,19 +2,33 @@
 // Aksent rangi kontur bo'yicha o'zgaradi: shaxsiy = qahrabo, biznes = ishkor.
 // Bu mahsulotning signature elementi, tasodifiy emas.
 
-import type { TextStyle } from 'react-native';
+import type { TextStyle, ViewStyle } from 'react-native';
 
 import type { Contour } from '../domain/types';
 
 export const colors = {
   siyoh: '#12212E', // asosiy matn, qoraymtir
   qogoz: '#F7F9F9', // fon
+  oq: '#FFFFFF', // karta foni
+  chegara: '#E7ECEC', // yengil chegara
   ishkor: '#1B7F91', // BIZNES konturi aksenti
   qahrabo: '#B5761F', // SHAXSIY konturi aksenti
   yashil: '#2E6B4F', // kirim
   qizil: '#A3352C', // chiqim
   kul: '#5E6E77', // ikkilamchi matn
 } as const;
+
+// Kartalarga yengil chuqurlik — professional ko'rinish.
+export const soya: ViewStyle = {
+  shadowColor: '#12212E',
+  shadowOpacity: 0.06,
+  shadowRadius: 12,
+  shadowOffset: { width: 0, height: 4 },
+  elevation: 2,
+};
+
+// Pul birligi (CLAUDE.md — so'm).
+export const VALYUTA = "so'm";
 
 // Kontur bo'yicha aksent rangi. Butun ilova shu funksiyaga tayanadi.
 export function accentFor(contour: Contour): string {

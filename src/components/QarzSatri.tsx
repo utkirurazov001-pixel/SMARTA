@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import type { QarzKorinish } from '../db/useDebts';
-import { colors, fonts, radius, spacing } from '../theme/tokens';
+import { colors, fonts, radius, soya, spacing } from '../theme/tokens';
 import PulMatn from './PulMatn';
 
 interface Props {
@@ -29,7 +29,7 @@ export default function QarzSatri({ korinish, qoldiqYashirin, onPress }: Props) 
           </Text>
         )}
       </View>
-      <PulMatn amount={qoldiq} yashirin={qoldiqYashirin} style={styles.qoldiq} />
+      <PulMatn amount={qoldiq} yashirin={qoldiqYashirin} som style={styles.qoldiq} />
     </Pressable>
   );
 }
@@ -42,9 +42,10 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     marginHorizontal: spacing.md,
     marginBottom: spacing.sm,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.oq,
     borderRadius: radius.md,
     gap: spacing.md,
+    ...soya,
   },
   chap: { flex: 1, gap: 2 },
   nom: { fontFamily: fonts.matn, fontSize: 16, color: colors.siyoh },

@@ -2,16 +2,25 @@
   "expo": {
     "name": "Smarta",
     "slug": "smarta",
+    "owner": "elgataxi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "smarta",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#F7F9F9",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F9F9"
+    },
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "uz.smarta.app"
     },
     "android": {
+      "package": "uz.smarta.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -24,6 +33,19 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"]
+    "plugins": [
+      "expo-router",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Ilovani ochish uchun Face ID ishlatiladi."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a83bbb9e-7c96-4084-a2cb-62773236babe"
+      }
+    }
   }
 }

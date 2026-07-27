@@ -20,9 +20,13 @@ const resources = {
 
 // Qurilma tili qo'llab-quvvatlansa o'shani, aks holda standart tilni tanlaymiz.
 function boshlangichTil(): Til {
-  const qurilmaKodi = getLocales()[0]?.languageCode ?? null;
-  if (qurilmaKodi === 'ru') {
-    return 'ru';
+  try {
+    const qurilmaKodi = getLocales()[0]?.languageCode ?? null;
+    if (qurilmaKodi === 'ru') {
+      return 'ru';
+    }
+  } catch {
+    // getLocales ishlamasa — standart til.
   }
   // O'zbek uchun standart sifatida lotin yozuvini beramiz.
   return STANDART_TIL;
@@ -35,8 +39,17 @@ if (!i18n.isInitialized) {
     resources,
     lng: boshlangichTil(),
     fallbackLng: STANDART_TIL,
+    supportedLngs: TILLAR,
+    // MUHIM: defis bilan yozilgan kod (uz-lat) region qismini KATTA harfga o'girib,
+    // resurs kaliti bilan mos kelmay qolardi. lowerCaseLng kodni kichik saqlaydi.
+    lowerCaseLng: true,
+    // Sinxron init — birinchi renderда tarjimalar tayyor bo'lsin (production'da muhim).
+    initImmediate: false,
     interpolation: {
       escapeValue: false, // React XSS'dan o'zi himoya qiladi
+    },
+    react: {
+      useSuspense: false,
     },
   });
 }
